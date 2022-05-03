@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Zvířátka v ZOO</h1>
-      <AnimalList animals={animals} />
+      <AnimalList animals={animals} handleOnClick={handleOnClick} />
       <AnimalDetail detail={detail} />
     </div>
   );
