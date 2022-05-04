@@ -6,7 +6,7 @@ const AnimalDetail = ({ detail }) => {
     <div className="detail">
       <div className="detail__content">
         <div className="detail__header">
-          <img className="detail__image" src="./images/slon.jpg" alt="xxx" />
+          <img className="detail__image" src={detail.foto} alt="xxx" />
           <div className="detail__title">
             <h2 className="detail__name">
               <span>{detail.nazev}</span>
@@ -18,7 +18,7 @@ const AnimalDetail = ({ detail }) => {
         </div>
 
         <div className="detail__info">
-          <p className="detail__desc">{popis}</p>
+          <p className="detail__desc">{detail.popis}</p>
 
           <div className="detail__items">
             <div className="detail__item">

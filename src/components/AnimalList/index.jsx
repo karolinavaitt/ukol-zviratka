@@ -1,7 +1,8 @@
 import React from "react";
 import Animal from "../Animal";
 
-const AnimalList = ({ animals, handleOnClick }) => {
+const AnimalList = ({ animals, selectAnimal }) => {
+ 
   return (
     <div className="animal-list">
       {animals.map((animal) => (
@@ -9,8 +10,9 @@ const AnimalList = ({ animals, handleOnClick }) => {
           key={animal.id}
           nazev={animal.nazev}
           latinsky={animal.nazevLatinsky}
-          image={animal.foto}
-          handleOnClick={handleOnClick}
+          foto={animal.foto}
+          id={animal.id}
+          selectAnimal={selectAnimal}
         />
       ))}
     </div>

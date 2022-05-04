@@ -1,9 +1,12 @@
 import React from "react";
 import "./style.css";
 
-const Animal = ({ foto, nazev, nazevLatinsky, id, handleOnClick }) => {
+const Animal = ({ id, foto, nazev, nazevLatinsky, selectAnimal }) => {
+  const handleOnClick = () => {
+    selectAnimal(id);
+  };
   return (
-    <div className="animal" onClick={() => handleOnClick(id)}>
+    <div className="animal" onClick={handleOnClick}>
       <div className="animal__image">
         <img src={foto} alt={nazev} />
       </div>

@@ -7,7 +7,7 @@ import AnimalDetail from "./components/AnimalDetail";
 
 const App = () => {
   const [animals, setAnimals] = useState([]);
-  const [detail, setDetail] = useState(animals[0]);
+  const [detail, setDetail] = useState({});
 
   useEffect(() => {
     fetch("https://lrolecek.github.io/zviratka-api/zvirata.json")
@@ -18,12 +18,18 @@ const App = () => {
       });
   }, []);
 
+  const selectAnimal = (id) => {
+    const selectedAnimal = animals.find((animal) => animal.id === id);
+    setDetail(selectedAnimal);
+  };
   return (
-    <div className="container">
+    <>
       <h1>Zvířátka v ZOO</h1>
-      <AnimalList animals={animals} handleOnClick={handleOnClick} />
-      <AnimalDetail detail={detail} />
-    </div>
+      <div className="container">
+        <AnimalList animals={animals} selectAnimal={selectAnimal} />
+        <AnimalDetail detail={detail} />
+      </div>
+    </>
   );
 };
 
